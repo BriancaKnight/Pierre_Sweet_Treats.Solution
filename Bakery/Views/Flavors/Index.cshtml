@@ -21,6 +21,16 @@ else
 </div>
 <br>
 
+@if (User.Identity.IsAuthenticated)
+{
 <div class="view-nav">
 <button>@Html.ActionLink("Add new Flavor", "Create")</button>
+<button>@Html.ActionLink("Go Home", "Index", "Home")</button>
 </div>
+}
+else
+{
+<div class="view-nav">
+<button>@Html.ActionLink("Go Home", "Index", "Home")</button>
+</div>
+}
