@@ -111,14 +111,17 @@ namespace Bakery.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize]
     [HttpPost]
-    public ActionResult AddTreat(Flavor flavor, int treatId)
+    public async Task<ActionResult> AddTreat(Flavor flavor, int treatId)
     {
       #nullable enable
       FlavorTreat? joinEntity = _db.FlavorTreats.FirstOrDefault(join => (join.TreatId == treatId && join.FlavorId == flavor.FlavorId));
       #nullable disable
       if (joinEntity == null && treatId != 0)
       {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
         _db.FlavorTreats.Add(new FlavorTreat() { TreatId = treatId, FlavorId = flavor.FlavorId});
         _db.SaveChanges();
       }
