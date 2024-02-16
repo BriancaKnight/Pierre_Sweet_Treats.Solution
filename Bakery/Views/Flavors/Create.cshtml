@@ -1,5 +1,7 @@
 @model Bakery.Models.Flavor
 
+@if (User.Identity.IsAuthenticated)
+{
 <h4>Add a new Flavor:</h4>
 <br>
 <div class="list">
@@ -16,3 +18,9 @@
 <div class="view-nav">
 <button>@Html.ActionLink("Show all Flavors", "Index")</button>
 </div>
+}
+else
+{
+<h4>Hey! You're not supposed to be here!</h4>
+<button>@Html.ActionLink("Go Back Home", "Index", "Home")</button>
+}

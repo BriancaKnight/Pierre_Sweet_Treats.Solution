@@ -1,8 +1,10 @@
 @model Bakery.Models.Flavor
 
-<h2>Are you sure you want to delete @Model.FlavorName?<h2>
+@if (User.Identity.IsAuthenticated)
+{
 <br>
-<h4>
+<h2>Are you sure you want to delete @Model.FlavorName?</h2>
+<br />
 @using (Html.BeginForm())
 {
     <div style="text-align: center;">
@@ -13,5 +15,10 @@
 <br>
 <div class="view-nav">
 <button>@Html.ActionLink("Back to Flavor List", "Index")</button>
-</h4>
-<div class="view-nav">
+</div>
+}
+else
+{
+<h4>Hey! You're not supposed to be here!</h4>
+<button>@Html.ActionLink("Go Back Home", "Index", "Home")</button>
+}
