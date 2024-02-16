@@ -90,9 +90,12 @@ namespace Bakery.Controllers
       return View(thisTreat);
     }  
 
+    [Authorize]
     [HttpPost, ActionName("Delete")]
-    public ActionResult DeleteConfirmed(int id)
+    public async Task<ActionResult> DeleteConfirmed(int id)
     {
+      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
       Treat thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
       _db.Treats.Remove(thisTreat);
       _db.SaveChanges();
@@ -105,6 +108,7 @@ namespace Bakery.Controllers
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "FlavorName");
       return View(thisTreat);
     }
+
 
     [HttpPost]
     public ActionResult AddFlavor(Treat treat, int flavorId)
