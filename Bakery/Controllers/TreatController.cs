@@ -14,9 +14,11 @@ namespace Bakery.Controllers
   public class TreatsController : Controller
   {
     private readonly BakeryContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public TreatsController(BakeryContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager,BakeryContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
@@ -31,8 +33,9 @@ namespace Bakery.Controllers
       return View();
     }
 
+    [Authorize]
     [HttpPost]
-    public ActionResult Create(Treat treat)
+    public async Task<ActionResult> Create(Treat treat)
     {
       if (!ModelState.IsValid)
       {
@@ -40,6 +43,8 @@ namespace Bakery.Controllers
       }
      else
       {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
          _db.Treats.Add(treat);
          _db.SaveChanges();
          return RedirectToAction("Index");
