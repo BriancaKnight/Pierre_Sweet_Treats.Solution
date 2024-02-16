@@ -1,0 +1,20 @@
+@model Bakery.Models.Treat;
+@using Bakery.Models;
+@using System.Collections.Generic;
+
+
+<h2>Treat Details</h2>
+<br>
+<div class="list">
+<h3>Treat Name : @Model.TreatName</h3>
+
+
+</div>
+<br>
+
+<div class="view-nav">
+<button>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId})</button>
+<button>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId}) </button>
+<button>@Html.ActionLink("Back to Treat list", "Index")</button>
+<button>@Html.ActionLink("Add Treat to this Treat", "AddMachine", new { id = Model.TreatId})</button>
+</div>
