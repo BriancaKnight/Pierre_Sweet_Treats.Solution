@@ -11,12 +11,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bakery.Controllers
 {
+ 
   public class FlavorsController : Controller
   {
     private readonly BakeryContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public FlavorsController(BakeryContext db)
+    public FlavorsController(UserManager<ApplicationUser> userManager, BakeryContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
@@ -31,8 +34,9 @@ namespace Bakery.Controllers
       return View();
     }
 
+    [Authorize]
     [HttpPost]
-    public ActionResult Create(Flavor flavor)
+    public async Task<ActionResult> Create(Flavor flavor)
     {
       if (!ModelState.IsValid)
       {
@@ -40,6 +44,8 @@ namespace Bakery.Controllers
       }
      else
       {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
          _db.Flavors.Add(flavor);
          _db.SaveChanges();
          return RedirectToAction("Index");

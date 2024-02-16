@@ -10,5 +10,6 @@ namespace Bakery.Models
     [Required(ErrorMessage = "The Flavor must have a name!")]
     public string FlavorName { get; set; }
     public List<FlavorTreat> JoinEntities { get; }
+    public ApplicationUser User { get; set; } 
   }
 }
