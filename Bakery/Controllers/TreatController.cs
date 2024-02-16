@@ -126,9 +126,12 @@ namespace Bakery.Controllers
       return RedirectToAction("Details", new { id = treat.TreatId });
     }
 
+    [Authorize]
     [HttpPost]
-    public ActionResult DeleteJoin(int joinId)
+    public async Task<ActionResult> DeleteJoin(int joinId)
     {
+      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
       FlavorTreat joinEntry = _db.FlavorTreats.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
       _db.FlavorTreats.Remove(joinEntry);
       _db.SaveChanges();
