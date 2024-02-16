@@ -3,37 +3,62 @@
 @using System.Collections.Generic;
 
 <h2>Flavor Details</h2>
-<br>
-<div class="list">
-<h3>Flavor Name : @Model.FlavorName</h3>
-
-@if (@Model.JoinEntities.Count == 0)
+@if (User.Identity.IsAuthenticated)
 {
- <p>This Flavor does not have any treats.</p>
+    <br />
+    <div class="list">
+        <h3>Flavor Name : @Model.FlavorName</h3>
+
+        @if (Model.JoinEntities.Count == 0)
+        {
+            <p>This Flavor does not have any treats.</p>
+        }
+        else
+        {
+            <h4>This Flavor's current treats:</h4>
+            <ul>
+                @foreach (FlavorTreat join in Model.JoinEntities)
+                {
+                    <li>@join.Treat.TreatName</li>
+
+                    @using (Html.BeginForm("DeleteJoin", "Flavors"))
+                    {
+                        @Html.Hidden("joinId", @join.FlavorTreatId)
+                        <input type="submit" value="Delete" />
+                    }
+                }
+            </ul>
+        }
+    </div>
+    <br />
 }
 else
 {
- <h4>This Flavors's current treats:</h4>
- <ul>
-@foreach (FlavorTreat join in Model.JoinEntities)
-{
-  <li>@join.Treat.TreatName</li>
+    <br />
+    <div class="list">
+        <h3>Flavor Name : @Model.FlavorName</h3>
 
-  @using (Html.BeginForm("DeleteJoin", "Flavors"))
-    {
-      @Html.Hidden("joinId", @join.FlavorTreatId)
-      <input type="submit" value="Delete"/>
-    }
+        @if (Model.JoinEntities.Count == 0)
+        {
+            <p>This Flavor does not have any treats.</p>
+        }
+        else
+        {
+            <h4>This Flavor's current treats:</h4>
+            <ul>
+                @foreach (FlavorTreat join in Model.JoinEntities)
+                {
+                    <li>@join.Treat.TreatName</li>
+                }
+            </ul>
+        }
+    </div>
+    <br />
 }
- </ul>
-}
-
-</div>
-<br>
 
 <div class="view-nav">
-<button>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId})</button>
-<button>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId}) </button>
-<button>@Html.ActionLink("Back to Flavor list", "Index")</button>
-<button>@Html.ActionLink("Add Treat to this Flavor", "AddTreat", new { id = Model.FlavorId})</button>
+    <button>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId})</button>
+    <button>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId})</button>
+    <button>@Html.ActionLink("Back to Flavor list", "Index")</button>
+    <button>@Html.ActionLink("Add Treat to this Flavor", "AddTreat", new { id = Model.FlavorId})</button>
 </div>
