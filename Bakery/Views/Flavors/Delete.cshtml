@@ -1,0 +1,17 @@
+@model Bakery.Models.Flavor
+
+<h2>Are you sure you want to delete @Model.FlavorName?<h2>
+<br>
+<h4>
+@using (Html.BeginForm())
+{
+    <div style="text-align: center;">
+    <input type="submit" value="Delete" />
+    </div>
+}
+<br>
+<br>
+<div class="view-nav">
+<button>@Html.ActionLink("Back to Flavor List", "Index")</button>
+</h4>
+<div class="view-nav">
