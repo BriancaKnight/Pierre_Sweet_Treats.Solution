@@ -1,0 +1,25 @@
+
+@model Bakery.Models.Treat
+
+<h2>Edit Treat</h2>
+<br>
+<div class="list">
+<h4>Edit @Model.TreatName</h4>
+
+<p>@Html.ValidationMessageFor(model => model.TreatName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+
+  @Html.LabelFor(model => model.TreatName)
+  @Html.EditorFor(model => model.TreatName)
+
+  <input type="submit" value="Save" />
+}
+</div>
+<br>
+
+<div class="view-nav">
+<button>@Html.ActionLink("Back to Treat list", "Index")</button>
+</div>
