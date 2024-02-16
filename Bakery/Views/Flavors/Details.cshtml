@@ -31,6 +31,12 @@
         }
     </div>
     <br />
+<div class="view-nav">
+    <button>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId})</button>
+    <button>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId})</button>
+   <button>@Html.ActionLink("Back to Flavor list", "Index")</button>
+    <button>@Html.ActionLink("Add Treat to this Flavor", "AddTreat", new { id = Model.FlavorId})</button>
+    </div>
 }
 else
 {
@@ -57,8 +63,5 @@ else
 }
 
 <div class="view-nav">
-    <button>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId})</button>
-    <button>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId})</button>
     <button>@Html.ActionLink("Back to Flavor list", "Index")</button>
-    <button>@Html.ActionLink("Add Treat to this Flavor", "AddTreat", new { id = Model.FlavorId})</button>
 </div>
