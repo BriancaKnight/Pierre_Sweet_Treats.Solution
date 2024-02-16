@@ -67,8 +67,9 @@ namespace Bakery.Controllers
         return View(thisFlavor);
       }
 
+  [Authorize]
   [HttpPost]
-  public ActionResult Edit(Flavor flavor)
+  public async Task<ActionResult> Edit(Flavor flavor)
    {
      if (!ModelState.IsValid)
       {
@@ -76,6 +77,8 @@ namespace Bakery.Controllers
       }
      else
        {
+        string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
         _db.Flavors.Update(flavor);
         _db.SaveChanges();
         return RedirectToAction("Index");
