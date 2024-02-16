@@ -49,8 +49,8 @@ namespace Bakery.Controllers
     public ActionResult Details(int id)
     {
       Flavor thisFlavor = _db.Flavors
-                            // .Include(flavor => flavor.JoinEntities)
-                            // .ThenInclude(join => join.Treat)
+                            .Include(flavor => flavor.JoinEntities)
+                            .ThenInclude(join => join.Treat)
                             .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
@@ -89,6 +89,27 @@ namespace Bakery.Controllers
       _db.Flavors.Remove(thisFlavor);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult AddTreat(int id)
+    {
+      Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
+      return View(thisFlavor);
+    }
+
+    [HttpPost]
+    public ActionResult AddTreat(Flavor flavor, int treatId)
+    {
+      #nullable enable
+      FlavorTreat? joinEntity = _db.FlavorTreats.FirstOrDefault(join => (join.TreatId == treatId && join.FlavorId == flavor.FlavorId));
+      #nullable disable
+      if (joinEntity == null && treatId != 0)
+      {
+        _db.FlavorTreats.Add(new FlavorTreat() { TreatId = treatId, FlavorId = flavor.FlavorId});
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Details", new { id = flavor.FlavorId });
     }
   }
 }
