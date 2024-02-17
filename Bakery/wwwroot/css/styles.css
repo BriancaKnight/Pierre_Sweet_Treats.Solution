@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+body{
+  background-image: url('./../img/background.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.centered-image {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 25%; 
+}
+
+div#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, white, rgba(255, 0, 0, 0.738));
+  color: white;
+  text-align: center;
+}
+
+.logo-image {
+  display: block; 
+  margin: 9% auto; 
+  max-width: 70%; 
+  height: auto; 
+  }
+
+  a {
+    color: black;
+    transition: font-size 0.3s; 
+    font-family: "Zeyada";
+    font-size: x-large;
+  }
+
+  a:hover {
+    font-size: 155%;
+    color: black;
+  }
+
+  .homeNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.homeNav a {
+    margin: 0 10px; /* Adjust the horizontal spacing between links */
+    text-decoration: none;
+    color: black;
+    transition: font-size 0.3s;
+    font-family: "Zeyada";
+    font-size: x-large;
+}
+
+.homeNav a:hover {
+    font-size: 155%;
+}

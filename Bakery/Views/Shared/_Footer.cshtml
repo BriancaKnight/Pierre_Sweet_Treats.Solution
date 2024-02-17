@@ -1,0 +1,15 @@
+@if (User.Identity.IsAuthenticated)
+{
+<br/>
+  @using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" class="btn btn-primary" value="Log out" />
+  }
+}
+else
+{
+<div id="footer">
+<br/>
+<p>@Html.ActionLink("Manager Login", "Index", "Account")</p>
+</div> 
+}
