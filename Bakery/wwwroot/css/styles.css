@@ -37,7 +37,7 @@ div#footer {
   a {
     color: black;
     transition: font-size 0.3s; 
-    font-family: "Zeyada";
+    /* font-family: "Zeyada"; */
     font-size: x-large;
   }
 
@@ -63,4 +63,70 @@ div#footer {
 
 .homeNav a:hover {
     font-size: 220%;
+}
+
+.styled-button {
+  color: black;
+  font-family: "Zeyada";
+  font-size: x-large;
+  text-decoration: none;
+  padding: 5px 10px; 
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.styled-button:hover {
+  font-size: 155%;
+  color: black;
+}
+
+h1 {
+  font-family: "Zeyada";
+  text-align: center;
+}
+
+.list {
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.254); 
+  padding-bottom: 5px; 
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 2px solid #FF0000; 
+  border-radius: 10px;
+
+}
+
+.view-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  font-family: "Zeyada";
+  font-size: x-large;
+  text-decoration: none;
+  padding: 5px 10px; 
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+  color: black;
+  font-family: "Zeyada";
+  font-size: x-large;
+  text-decoration: none;
+  padding: 5px 10px; 
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  font-size: 155%;
+  color: black;
 }

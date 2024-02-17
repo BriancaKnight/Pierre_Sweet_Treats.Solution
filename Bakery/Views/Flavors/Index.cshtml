@@ -1,6 +1,6 @@
 @using Bakery.Models;
 
-<h2>Flavors</h2>
+<h1>Flavors</h1>
 <p style="text-align: center;">Click an Flavor to see included treats!<p>
 
 <div class="list">
@@ -11,12 +11,12 @@
 }
 else
 {
-  <ul>
+
   @foreach (Flavor flavor in Model)
   {
-    <li>@Html.ActionLink($"{flavor.FlavorName}", "Details", new { id = flavor.FlavorId })</li>
+    <div >@Html.ActionLink($"{flavor.FlavorName}", "Details", new { id = flavor.FlavorId })</div>
   }
-  </ul>
+
 }
 </div>
 <br>

@@ -1,6 +1,6 @@
 @using Bakery.Models;
 
-<h2>Treats</h2>
+<h1>Treats</h1>
 <p style="text-align: center;">Click an Treat to see it's flavors!<p>
 
 <div class="list">
@@ -14,7 +14,7 @@ else
   <ul>
   @foreach (Treat treat in Model)
   {
-    <li>@Html.ActionLink($"{treat.TreatName}", "Details", new { id = treat.TreatId })</li>
+    <div>@Html.ActionLink($"{treat.TreatName}", "Details", new { id = treat.TreatId })</div>
   }
   </ul>
 }

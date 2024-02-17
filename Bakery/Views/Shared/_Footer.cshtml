@@ -1,10 +1,12 @@
 @if (User.Identity.IsAuthenticated)
 {
 <br/>
+<div id="footer">
   @using (Html.BeginForm("LogOff", "Account"))
   {
-    <input type="submit" class="btn btn-primary" value="Log out" />
+    <input type="submit" class="styled-button" value="Log out" />
   }
+  </div> 
 }
 else
 {
