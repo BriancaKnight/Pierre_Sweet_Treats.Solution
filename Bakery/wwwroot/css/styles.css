@@ -41,15 +41,15 @@ div#footer {
     font-size: x-large;
   }
 
-  /* a:hover {
+  a:hover {
     font-size: 155%;
     color: black;
-  } */
+  }
 
-  .homeNav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.homeNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .homeNav a {
