@@ -26,9 +26,10 @@ div#footer {
   text-align: center;
 }
 
-.logo-image {
+.splash-image {
   display: block; 
-  margin: 9% auto; 
+  margin: 5% auto; 
+  margin-bottom: 0;
   max-width: 70%; 
   height: auto; 
   }
@@ -40,10 +41,10 @@ div#footer {
     font-size: x-large;
   }
 
-  a:hover {
+  /* a:hover {
     font-size: 155%;
     color: black;
-  }
+  } */
 
   .homeNav {
     display: flex;
@@ -52,14 +53,14 @@ div#footer {
 }
 
 .homeNav a {
-    margin: 0 10px; /* Adjust the horizontal spacing between links */
+    margin: 0 10px; 
     text-decoration: none;
     color: black;
     transition: font-size 0.3s;
     font-family: "Zeyada";
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 .homeNav a:hover {
-    font-size: 155%;
+    font-size: 220%;
 }
