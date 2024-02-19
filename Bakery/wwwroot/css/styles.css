@@ -37,8 +37,9 @@ div#footer {
   a {
     color: black;
     transition: font-size 0.3s; 
-    /* font-family: "Zeyada"; */
+    font-family: "Zeyada";
     font-size: x-large;
+    text-decoration: none;
   }
 
   a:hover {
@@ -74,7 +75,6 @@ div#footer {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .styled-button:hover {
@@ -82,7 +82,8 @@ div#footer {
   color: black;
 }
 
-h1 {
+h1,
+h2 {
   font-family: "Zeyada";
   text-align: center;
 }
@@ -96,7 +97,7 @@ h1 {
   margin-right: 20%;
   border: 2px solid #FF0000; 
   border-radius: 10px;
-
+  text-align: center;
 }
 
 .view-nav{

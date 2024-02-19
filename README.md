@@ -1,6 +1,6 @@
-# Project Name
+# Pierre's Sweet and Savory Bakery
 
-### Short Project Description
+### A bakery marketplace web application
 
 #### By Brianca Knight
 
@@ -13,19 +13,16 @@
 * MySQL
 * MySQL Workbench
 
+
 ## Description
 
-This is a longer description of the application.
-
-Here is a diagram of the schema structure:
-
-![Add Schema Diagram](diagram.png)
+This application serves as an online marketplace where a user can browse the bakery inventory by flavors or by treats. If a user is signed in with Identity they have manager-level access to create, edit, and delete items. 
 
 ## Setup/Installation Requirements
 
-* Clone this repo from `https://github.com/BriancaKnight/ProjectName.Solution`.
+* Clone this repo from `https://github.com/BriancaKnight/Pierre_Sweet_Treats.Solution`.
 
-* In the production sub directory (named `ProjectName`) create a file named `appsettings.json` and add the following code to it:
+* In the production sub directory (named `Bakery`) create a file named `appsettings.json` and add the following code to it:
 
  ```json
     {
@@ -37,22 +34,17 @@ Here is a diagram of the schema structure:
 
   Make sure to update the string with your own values for [DATABASE-NAME],[USERNAME] and [PASSWORD], without square brackets. You can name the database whatever you like. 
 
-* In the terminal run the commands `dotnet tool install --global dotnet-ef --version 6.0.0` and `dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0` to download the tools dotnet-ef that will create migrations and update your database. 
+* In the terminal run the commands `dotnet restore` to install dependencies. 
 
-* To create a data migration for the database, initialize with `dotnet ef migrations add Initial` in your terminal. This should create a Migrations folder in the production subdirectory of your project. 
-
-* To add subsequent migrations run the command `dotnet ef migrations add [AddExamplePriority]` You can name the migration whatever you like, however it is common to start with a verb and use upper camel case. Remember to remove the square brackets!
-
-* Run the following command to update the database. `dotnet ef database update`.
-
-* If you would like to remove a migration from the database, run `dotnet ef migrations remove`.
+* To set up the database schema run the command `dotnet ef database update`. 
 
 * Run the command `dotnet watch run` to compile and run the application in development mode with a watcher. Optionally, you can run `dotnet build` to compile without running the app. 
 
 * Open the browser to https://localhost:5001 to use the application. 
 
 ## Known Bugs
-* None.
+* The header logo breaks on the details pages for both treats and flavors. 
+* The treat index p tags are slightly off centered. 
 
 ## License
 

@@ -16,10 +16,10 @@
         else
         {
             <h4>This Flavor's current treats:</h4>
-            <ul>
+ 
                 @foreach (FlavorTreat join in Model.JoinEntities)
                 {
-                    <li>@join.Treat.TreatName</li>
+                    <p>@join.Treat.TreatName</p>
 
                     @using (Html.BeginForm("DeleteJoin", "Flavors"))
                     {
@@ -27,7 +27,7 @@
                         <input type="submit" value="Delete" />
                     }
                 }
-            </ul>
+
         }
     </div>
     <br />
@@ -51,12 +51,12 @@ else
         else
         {
             <h4>This Flavor's current treats:</h4>
-            <ul>
+            
                 @foreach (FlavorTreat join in Model.JoinEntities)
                 {
-                    <li>@join.Treat.TreatName</li>
+                    <p>@join.Treat.TreatName</p>
                 }
-            </ul>
+            
         }
     </div>
     <br />
