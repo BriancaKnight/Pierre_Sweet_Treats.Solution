@@ -11,12 +11,12 @@
 }
 else
 {
-  <ul>
+
   @foreach (Treat treat in Model)
   {
     <div>@Html.ActionLink($"{treat.TreatName}", "Details", new { id = treat.TreatId })</div>
   }
-  </ul>
+
 }
 </div>
 <br>
