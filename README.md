@@ -42,8 +42,7 @@ This application serves as an online marketplace where a user can browse the bak
 
 * Open the browser to https://localhost:5001 to use the application. 
 
-## Known Bugs
-* The header logo breaks on the details pages for both treats and flavors. 
+## Known Bugs 
 * The treat index p tags are slightly off centered. 
 
 ## License

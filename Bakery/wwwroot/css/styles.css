@@ -39,7 +39,6 @@ div#footer {
     transition: font-size 0.3s; 
     font-family: "Zeyada";
     font-size: x-large;
-    text-decoration: none;
   }
 
   a:hover {
@@ -55,7 +54,6 @@ div#footer {
 
 .homeNav a {
     margin: 0 10px; 
-    text-decoration: none;
     color: black;
     transition: font-size 0.3s;
     font-family: "Zeyada";
@@ -70,7 +68,6 @@ div#footer {
   color: black;
   font-family: "Zeyada";
   font-size: x-large;
-  text-decoration: none;
   padding: 5px 10px; 
   border: none;
   background-color: transparent;
