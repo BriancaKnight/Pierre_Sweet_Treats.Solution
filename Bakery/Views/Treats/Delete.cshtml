@@ -4,18 +4,18 @@
 {
 <br>
 
-<h2>Are you sure you want to delete @Model.TreatName?</h2>
+<h4>Are you sure you want to delete @Model.TreatName?</h4>
 <br />
 @using (Html.BeginForm())
 {
     <div style="text-align: center;">
-    <input type="submit" value="Delete" />
+    <input type="submit" value="Yes, Delete @Model.TreatName" />
     </div>
 }
 <br>
 <br>
 <div class="view-nav">
-<button>@Html.ActionLink("Back to Treat List", "Index")</button>
+<button>@Html.ActionLink("No, Take Me Back to Treat List", "Index")</button>
 </div>
 }
 else

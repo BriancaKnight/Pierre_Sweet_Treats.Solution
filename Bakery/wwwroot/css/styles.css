@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
-body{
+body {
   background-image: url('./../img/background.png');
   background-size: cover;
   background-attachment: fixed;
@@ -13,7 +13,7 @@ body{
   top: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 25%; 
+  max-width: 25%;
 }
 
 div#footer {
@@ -27,24 +27,24 @@ div#footer {
 }
 
 .splash-image {
-  display: block; 
-  margin: 5% auto; 
+  display: block;
+  margin: 5% auto;
   margin-bottom: 0;
-  max-width: 70%; 
-  height: auto; 
-  }
+  max-width: 70%;
+  height: auto;
+}
 
-  a {
-    color: black;
-    transition: font-size 0.3s; 
-    font-family: "Zeyada";
-    font-size: x-large;
-  }
+a {
+  color: black;
+  transition: font-size 0.3s;
+  font-family: "Zeyada";
+  font-size: x-large;
+}
 
-  a:hover {
-    font-size: 155%;
-    color: black;
-  }
+a:hover {
+  font-size: 155%;
+  color: black;
+}
 
 .homeNav {
   display: flex;
@@ -53,29 +53,30 @@ div#footer {
 }
 
 .homeNav a {
-    margin: 0 10px; 
-    color: black;
-    transition: font-size 0.3s;
-    font-family: "Zeyada";
-    font-size: xx-large;
+  margin: 0 10px;
+  color: black;
+  transition: font-size 0.3s;
+  font-family: "Zeyada";
+  font-size: xx-large;
 }
 
 .homeNav a:hover {
-    font-size: 220%;
+  font-size: 220%;
 }
 
 .styled-button {
   color: black;
   font-family: "Zeyada";
   font-size: x-large;
-  padding: 5px 10px; 
+  padding: 5px 10px;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .styled-button:hover {
-  font-size: 155%;
+  font-size: 185%;
   color: black;
 }
 
@@ -88,24 +89,23 @@ h2 {
 .list {
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgba(255, 0, 0, 0.254); 
-  padding-bottom: 5px; 
+  background-color: rgba(255, 0, 0, 0.254);
+  padding-bottom: 5px;
   margin-left: 20%;
   margin-right: 20%;
-  border: 2px solid #FF0000; 
+  border: 2px solid #FF0000;
   border-radius: 10px;
   text-align: center;
 }
 
-.view-nav{
+.view-nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
   color: black;
-  font-family: "Zeyada";
-  font-size: x-large;
+  font-size: large;
   text-decoration: none;
-  padding: 5px 10px; 
+  padding: 5px 10px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -116,8 +116,8 @@ button {
   color: black;
   font-family: "Zeyada";
   font-size: x-large;
-  text-decoration: none;
-  padding: 5px 10px; 
+  text-decoration: underline;
+  padding: 5px 10px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -125,6 +125,20 @@ button {
 }
 
 .button:hover {
-  font-size: 155%;
+  font-size: 135%;
   color: black;
 }
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* .delete-button {
+  margin-left: 50%;
+  /* Adjust margin as needed */
+
+  h4 {
+    text-align: center;
+  }

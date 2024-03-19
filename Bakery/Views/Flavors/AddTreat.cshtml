@@ -5,6 +5,7 @@
 <h2>Add a treat to @Model.FlavorName</h2>
 <br>
 <div class="list">
+<br/>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.FlavorId)
@@ -14,6 +15,7 @@
 
     <input type="submit" value="Save" />
 }
+<br/>
 </div>
 <br>
 
