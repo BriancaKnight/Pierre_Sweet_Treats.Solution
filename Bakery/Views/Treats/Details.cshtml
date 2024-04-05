@@ -3,10 +3,10 @@
 @using System.Collections.Generic;
 
 <h1>@Model.TreatName Flavors</h1>
+<p style="text-align: center;">All current flavor options for @Model.TreatName:<p>
 @if (User.Identity.IsAuthenticated)
 {
     <div class="list">
-    <br/>
         @if (Model.JoinEntities.Count == 0)
         {
             <p>@Model.TreatName does not have any flavor.</p>

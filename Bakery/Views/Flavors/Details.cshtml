@@ -3,6 +3,7 @@
 @using System.Collections.Generic;
 
 <h1>@Model.FlavorName Treats</h1>
+<p style="text-align: center;">All current treat options for @Model.FlavorName:<p>
 @if (User.Identity.IsAuthenticated)
 {
     <div class="list">
